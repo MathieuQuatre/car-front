@@ -1,0 +1,19 @@
+/* CarComponent.css */
+.container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.filters {
+    position: fixed;
+    width: 300px;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.car-cards {
+    flex: 1;
+    margin-left: 320px;
+}
+
+/* Add additional styles here if needed */
