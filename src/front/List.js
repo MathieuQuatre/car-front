@@ -69,7 +69,7 @@ const List = () => {
         ));
         setFilteredCars(filtered);
         setCurrentPage(1); // Reset to first page on filter change
-    }, [filters, cars, brands, models, engineTypes, transmissions, conditions, bodyTypes]);
+    }, [filters, cars, brands, engineTypes, transmissions, conditions, bodyTypes]);
     
 
     const selectCar = (car) => setSelectedCar(car);
