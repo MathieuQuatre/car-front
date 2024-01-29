@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="list"  element={<List />} />
+        <Route path="/"  element={<List />} />
         <Route path="message"  element={<MessagingUI />} />
         {/* Other routes here */}
         {/* <Route exact path="/" component={Home} /> */}
