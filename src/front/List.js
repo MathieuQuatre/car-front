@@ -7,17 +7,15 @@ const List = () => {
     const [cars, setCars] = useState([]);
     const [filteredCars, setFilteredCars] = useState([]);
     const [brands, setBrands] = useState([]);
-    const [models, setModels] = useState([]);
     const [engineTypes, setEngineTypes] = useState([]);
     const [transmissions, setTransmissions] = useState([]);
     const [conditions, setConditions] = useState([]);
     const [bodyTypes, setBodyTypes] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize] = useState(20);
+    const pageSize = 20; // Changed from useState as the value seems constant
     const [selectedCar, setSelectedCar] = useState(null);
     const [filters, setFilters] = useState({
         brand: '',
-        model: '',
         engineType: '',
         transmission: '',
         condition: '',
@@ -27,29 +25,27 @@ const List = () => {
         minMileage: '',
         maxMileage: '',
     });
-    const [currentBrand, setCurrentBrand] = useState('');
+
 
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const carsResponse = await axios.get('http://localhost:4001/api/cars');
-                setCars(carsResponse.data);
-                setFilteredCars(carsResponse.data); // Initialize with all cars
-
-                const brandsResponse = await axios.get('http://localhost:4001/api/brands');
-                setBrands(brandsResponse.data);
-
-                const engineTypesResponse = await axios.get('http://localhost:4001/api/engine-types');
-                setEngineTypes(engineTypesResponse.data);
-
-                const transmissionsResponse = await axios.get('http://localhost:4001/api/transmissions');
-                setTransmissions(transmissionsResponse.data);
-
-                const conditionsResponse = await axios.get('http://localhost:4001/api/conditions');
-                setConditions(conditionsResponse.data);
-
-                const bodyTypesResponse = await axios.get('http://localhost:4001/api/body-types');
-                setBodyTypes(bodyTypesResponse.data);
+                const responses = await Promise.all([
+                    axios.get('http://localhost:4001/api/cars'),
+                    axios.get('http://localhost:4001/api/brands'),
+                    axios.get('http://localhost:4001/api/engine-types'),
+                    axios.get('http://localhost:4001/api/transmissions'),
+                    axios.get('http://localhost:4001/api/conditions'),
+                    axios.get('http://localhost:4001/api/body-types'),
+                ]);
+                
+                setCars(responses[0].data);
+                setFilteredCars(responses[0].data); // Initialize with all cars
+                setBrands(responses[1].data);
+                setEngineTypes(responses[2].data);
+                setTransmissions(responses[3].data);
+                setConditions(responses[4].data);
+                setBodyTypes(responses[5].data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
