@@ -9,7 +9,7 @@ function MessagingUI() {
     ];
 
     const currentUserId = 1; // Static ID for the current user, replace this with actual user ID
-    const [contacts, setContacts] = useState(initialContacts);
+    const [contacts] = useState(initialContacts);
     const [currentContact, setCurrentContact] = useState(initialContacts[0] || null);
     const [messages, setMessages] = useState({});
     const [newMessage, setNewMessage] = useState('');
