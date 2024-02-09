@@ -120,10 +120,12 @@ const List = () => {
     const setPage = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        <div><Header />
-        <div className="container">
+        <div>
+        <Header />
+        <div className="carList-container">
+            <div className="carList-content">
             {/* Filter controls */}
-            <div className="filters">
+            <div className="carList-filters">
                 {/* Brands Filter */}
                 <select className="form-control mb-2" onChange={(e) => handleFilterChange('brand', e.target.value)}>
                     <option value="">All Brands</option>
@@ -207,23 +209,19 @@ const List = () => {
                     </div>
                 </div>
             </div>
-            <div className="car-cards">
+            <div className="carList-cards">
                 <div className="row">
                     {filteredCars.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(car => (
                         <div key={car.id} className="col-md-12 mb-4">
-                            <div className="card">
-                                <div className="row no-gutters">
-                                    <div className="col-md-2">
-                                        <img src={car.ProfileImage} className="card-img" alt={`${car.Brand.Name} ${car.Model.Name}`} />
-                                    </div>
-                                    <div className="col-md-10">
-                                        <div className="card-body">
-                                            <h5 className="card-title">{car.Brand.Name} {car.Model.Name}</h5>
-                                            <p>Price: ${car.Price}</p>
-                                            <p>Mileage: {car.Mileage}</p>
-                                            <button type="button" className="btn btn-primary" onClick={() => selectCar(car)}>View Details</button>
-                                        </div>
-                                    </div>
+                            <div className="row no-gutters">
+                                <div className="card-img-div col-md-2">
+                                    <img src={car.ProfileImage} className="card-img" alt={`${car.Brand.Name} ${car.Model.Name}`} />
+                                </div>
+                                <div className="card-body col-md-10">
+                                    <h5 className="card-title">{car.Brand.Name} {car.Model.Name}</h5>
+                                    <p>Price: ${car.Price}</p>
+                                    <p>Mileage: {car.Mileage}</p>
+                                    <button type="button" className="btn btn-primary" onClick={() => selectCar(car)}>View Details</button>
                                 </div>
                             </div>
                         </div>
@@ -248,6 +246,7 @@ const List = () => {
             </div>
 
             {renderModal()}
+        </div>
         </div>
         </div>
     );

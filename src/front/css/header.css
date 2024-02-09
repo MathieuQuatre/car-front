@@ -1,0 +1,23 @@
+/* Assuming this is part of list.css or a similar file */
+.custom-header nav {
+    background-color: #242444; /* Dark blue background for the navbar */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.custom-header .navbar-brand{
+    color: white; /* White text for better visibility */
+    margin-left: 5%;
+}
+.collapse.navbar-collapse {
+    margin-right: 5%;
+}
+
+.custom-header .nav-link:hover {
+    color: #4a4aff; /* Change color on hover */
+}
+
+/* Additional styles for icons if needed */
+.custom-header .fa-icon {
+    margin-right: 5px;
+}

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/messageui.css'; // Adjust the path according to your file structure
+import Header from './Header';
+
 
 function MessagingUI() {
     const initialContacts = [
@@ -57,6 +60,8 @@ function MessagingUI() {
     };
 
     return (
+        <div className="messaging-page-container">
+            <Header />
         <div className="container py-4">
             <div className="row">
                 <div className="col-md-4">
@@ -85,7 +90,7 @@ function MessagingUI() {
                 <div className="col-md-8">
                     <div className="border rounded p-3" style={{ height: '400px', overflowY: 'auto' }}>
                         {currentContact && (messages[currentContact.id] || []).map((message, index) => (
-                            <div key={index} className={`p-2 my-2 rounded ${message.sender ? 'bg-primary text-white' : 'bg-light'}`}>
+                            <div key={index} className={`p-2 my-2 rounded ${message.sender ? 'bg-primary text-white' : '#1c1c2d'}`}>
                                 {message.text}
                             </div>
                         ))}
@@ -105,6 +110,7 @@ function MessagingUI() {
                     )}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

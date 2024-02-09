@@ -1,24 +1,24 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser } from '@fortawesome/free-solid-svg-icons';
-
+import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Importing the envelope (message) icon
+import './css/header.css'
 const Header = () => {
     return (
-        <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <header className="custom-header"> {/* Added a custom class for styling */}
+            <nav className="navbar navbar-expand-lg">
                 <a className="navbar-brand" href="/">My Application</a>
                 
                 <div className="collapse navbar-collapse">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="/link1">
-                                <FontAwesomeIcon icon={faHome} /> {/* Home icon */}
+                            <a className="nav-link" href="/link2">
+                                <FontAwesomeIcon icon={faUser} /> {/* User icon */}
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/link2">
-                                <FontAwesomeIcon icon={faUser} /> {/* User icon */}
+                            <a className="nav-link" href="/message">
+                                <FontAwesomeIcon icon={faEnvelope} /> {/* Message icon */}
                             </a>
                         </li>
                     </ul>

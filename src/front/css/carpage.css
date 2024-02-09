@@ -1,0 +1,73 @@
+/* Custom CSS for CarPage */
+
+/* Style for the main image */
+.img-main {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style for the container of smaller images */
+.d-flex.overflow-auto {
+    justify-content: center;
+    flex-wrap: wrap; /* In case you want to wrap images to the next line */
+}
+
+/* Style for the smaller images */
+.img-thumbnail {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px; /* Adjust space between thumbnails */
+    margin-bottom: 10px; /* Space below each thumbnail, for when they wrap */
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+}
+.seller-details{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+/* ... existing styles ... */
+
+.car-page-theme {
+    background-color: #1c1c2d; /* Dark blue background */
+    min-height: 100vh; /* Ensure it covers the full height */
+    color: #f0f0f0; /* Light text for contrast */
+}
+
+/* Optionally, if you want to style the inner container differently */
+.car-page-theme .container {
+    background-color: #242444; /* Slightly different shade for the container */
+    padding: 20px; /* Inner spacing */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* ... existing styles ... */
+
+/* Table styles to fit the dark theme */
+.Customtable.table-striped.mt-3 {
+    background-color: #242444; /* Dark table background */
+    border: 1px solid #242444; /* Subtle border for the table */
+}
+
+table td {
+    color: #f0f0f0; /* Light text color for readability */
+    padding: 10px;
+}
+table th {
+    color: #f0f0f0; /* Light text color for readability */
+}
+table thead th {
+    border-bottom: 2px solid #33334d; /* Dark border for header row */
+}
+
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #1c1c2d; /* Slightly lighter for striped effect */
+}
+
+/* ... any additional styles ... */
+

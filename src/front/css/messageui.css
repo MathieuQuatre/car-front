@@ -1,0 +1,6 @@
+/* MessagingUI.css */
+.messaging-page-container {
+    background-color: #1c1c2d; /* Dark blue background */
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    color: #f0f0f0; /* Light text for contrast */
+}
